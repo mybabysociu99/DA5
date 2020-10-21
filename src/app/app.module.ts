@@ -4,15 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import {QuanlyhoclaiModule} from './quanlyhoclai/quanlyhoclai.module'
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    QuanlyhoclaiModule
   ],
   providers: [],
+  exports:[
+    AppComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
