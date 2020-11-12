@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../Shared/footer/footer.component';
 import { SideBarComponent } from '../Shared/side-bar/side-bar.component';
 import { NavBarComponent } from '../Shared/nav-bar/nav-bar.component';
-
 import { QuanlyhoclaiComponent } from './quanlyhoclai.component';
-import { DiemComponent } from './diem/diem.component';
-import { SinhvienComponent } from './sinhvien/sinhvien.component';
-import { PhieuthuComponent } from './phieuthu/phieuthu.component';
+
+
+
+
 export const mainRoutes: Routes = [
   {
     path: '', component: QuanlyhoclaiComponent,
@@ -16,12 +16,16 @@ export const mainRoutes: Routes = [
         {
           path: '', loadChildren: () => import('./lop/lop.module').then(m => m.LopModule)
       },{
-        path: 'diem', component:DiemComponent
+        path: 'diem',  loadChildren: () => import('./diem/diem.module').then(m => m.DiemModule)
     },
     {
-      path: 'sinhvien', component:SinhvienComponent
-  },{
-    path: 'phieuthu', component:PhieuthuComponent
+      path: 'sinhvien',  loadChildren: () => import('./sinhvien/sinhvien.module').then(m => m.SinhvienModule)
+  },
+  {
+    path: 'phieuthu',  loadChildren: () => import('./phieuthu/phieuthu.module').then(m => m.PhieuthuModule)
+  },
+  {
+    path: 'login',  loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
 },
 
       ]
@@ -34,9 +38,8 @@ export const mainRoutes: Routes = [
     SideBarComponent,
     NavBarComponent,
     QuanlyhoclaiComponent,
-    DiemComponent,
-    SinhvienComponent,
-    PhieuthuComponent
+
+
   ],
   imports: [
     CommonModule,

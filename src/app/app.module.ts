@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import {QuanlyhoclaiModule} from './quanlyhoclai/quanlyhoclai.module'
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    QuanlyhoclaiModule
+    QuanlyhoclaiModule,
+    FormsModule
   ],
   providers: [],
   exports:[

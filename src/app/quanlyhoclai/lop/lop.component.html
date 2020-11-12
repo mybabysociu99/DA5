@@ -25,39 +25,88 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Danh Sách Lớp Học Lại</h3>
-              <input class="form-control form-control-navbar" type="search" placeholder="Tìm Lớp Học Lại" aria-label="Search">
+              <input class="form-control form-control-navbar" type="search" placeholder="Tìm Lớp Học Lại"
+                aria-label="Search">
               <button style="margin-top: 10px;">Tìm Kiếm</button>
             </div>
-            
+
 
             <!-- /.card-header -->
             <div class="card-body">
-              <button style="margin-left: 1430px; margin-bottom: 30px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              <button style="margin-left: 1430px; margin-bottom: 30px;" type="button" class="btn btn-primary"
+                (click)="showAdd()">
                 Thêm Mới
               </button>
-              
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+
+              <!--modal-->
+              <div bsModal #addAndEdit="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                aria-labelledby="dialog-sizes-name1">
+                <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title"  id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      
+                      <button type="button" class="close pull-right" (click)="addAndEdit.hide()" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-                      ...
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <form class="form-horizontal" #formStudent="ngForm" (ngSubmit)="save(formStudent.value)"
+                        *ngIf="entity">
+                        <div class="form-group">
+                          <label for="classId">Mã lớp:</label>
+                          <input type="hidden" class="form-control" name="hidenID" placeholder="Nhập mã lớp"
+                            [(ngModel)]="hidenID">
+                          <input type="text" class="form-control" name="classId" placeholder="Nhập mã lớp"
+                            [(ngModel)]="entity.classId">
+                        </div>
+                        <div class="form-group">
+                          <label for="className">Tên lớp:</label>
+                          <input type="text" class="form-control" name="className" placeholder="Nhập tên lớp"
+                            [(ngModel)]="entity.className">
+                        </div>
+                        <div class="form-group">
+                          <label for="facultyId">Khoa:</label>
+                          <input type="text" class="form-control" name="facultyId" placeholder="Nhập tên khoa"
+                            [(ngModel)]="entity.facultyId">
+                        </div>
+                        <div class="form-group">
+                          <label for="subjectsId">Môn học:</label>
+                          <input type="text" class="form-control" name="subjectsId" placeholder="Nhập tên môn học"
+                            [(ngModel)]="entity.subjectsId">
+                        </div>
+                        <div class="form-group">
+                          <label for="leturersId">Mã giảng viên:</label>
+                          <input type="text" class="form-control" name="leturersId" placeholder="Nhập mã giảng viên"
+                            [(ngModel)]="entity.leturersId">
+                        </div>
+                        <div class="form-group">
+                          <label for="startDay">Ngày bắt đầu:</label>
+                          <input type="datetime-local" class="form-control" name="startDay"
+                            placeholder="Nhập ngày bắt đầu" [(ngModel)]="entity.startDay">
+                        </div>
+                        <div class="form-group">
+                          <label for="finishDay">Ngày kết thúc:</label>
+                          <input type="datetime-local" class="form-control" name="finishDay"
+                            placeholder="Nhập ngày kết thúc" [(ngModel)]="entity.finishDay">
+                        </div>
+                        <!-- <div class="form-group">
+                          <label for="statusPay">Thanh toán:</label>
+                          <section class="form-control" name ="statusPay" [(ngModel)]="entity.statusPay"> 
+                              <option value="1">Yes</option>
+                              <option value="0">False</option>
+                          </section>
+                          
+                        </div> -->
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
                     </div>
                   </div>
                 </div>
               </div>
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
+              <!--end modal-->
+            </div>
+            <table id="example2" class="table table-bordered table-hover">
+              <thead>
                 <tr>
                   <th>Mã Lớp</th>
                   <th>Tên Lớp</th>
@@ -68,9 +117,9 @@
                   <th>Ngày Kết Thúc</th>
                   <th>Chức Năng</th>
                 </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor = "let row of lop">
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of lop">
                   <td>{{row.classId}}</td>
                   <td>{{row.className}}</td>
                   <td>{{row.facultyId}}</td>
@@ -78,24 +127,28 @@
                   <td>{{row.leturersId}}</td>
                   <td>{{row.startDay}}</td>
                   <td>{{row.finishDay}}</td>
-                 
+
                   <td>
                     <button class="fa fa-check" aria-hidden="true"></button>
-                    <button style="margin-left: 10px;" class="fa fa-edit"  aria-hidden="true"></button>
-                    <button style="margin-left: 10px;" class="fa fa-trash" aria-hidden="true"></button>
+                    <button style="margin-left: 10px;" class="fa fa-edit" aria-hidden="true"
+                      (click)="showEdit(row.classId)"></button>
+                    <button style="margin-left: 10px;" class="fa fa-trash" aria-hidden="true"
+                      (click)="deleteItem(row.classId)"></button>
                   </td>
                 </tr>
-              </table>
-            </div>
-            <!-- /.card-body -->
+            </table>
           </div>
-          <!-- /.card -->
+          <!-- /.card-body -->
         </div>
-        <!-- /.col -->
+        <!-- /.card -->
       </div>
-      <!-- /.row -->
+      <!-- /.col -->
     </div>
+    <!-- /.row -->
+
     <!-- /.container-fluid -->
   </section>
   <!-- /.content -->
 </div>
+
+<!--model-->

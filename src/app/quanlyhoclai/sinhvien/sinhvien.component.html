@@ -1,103 +1,157 @@
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>Danh Sách Sinh Viên Học Lại</h1>
-
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Danh Sách Sinh Viên Học Lại</h1>
+  
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+              <li class="breadcrumb-item active">Sinh Viên Học Lại</li>
+            </ol>
+          </div>
         </div>
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
-            <li class="breadcrumb-item active">Sinh Viên Học Lại</li>
-          </ol>
-        </div>
-      </div>
-    </div><!-- /.container-fluid -->
-  </section>
-
-  <!-- Main content -->
-  <section class="content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Danh Sách Sinh Viên Học Lại</h3>
-              <input class="form-control form-control-navbar" type="search" placeholder="Tìm Sinh Viên Học Lại" aria-label="Search">
-              <button style="margin-top: 10px;">Tìm Kiếm</button>
-            </div>
-            
-
-            <!-- /.card-header -->
-            <div class="card-body">
-              <button style="margin-left: 1430px; margin-bottom: 30px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Thêm Mới
-              </button>
-              
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title"  id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      ...
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+      </div><!-- /.container-fluid -->
+    </section>
+  
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Danh Sách Sinh Viên Học Lại</h3>
+                <input class="form-control form-control-navbar" type="search" placeholder="Tìm Sinh Viên Học Lại"
+                  aria-label="Search">
+                <button style="margin-top: 10px;">Tìm Kiếm</button>
+              </div>
+  
+  
+              <!-- /.card-header -->
+              <div class="card-body">
+                <button style="margin-left: 1430px; margin-bottom: 30px;" type="button" class="btn btn-primary"
+                  (click)="showAdd()">
+                  Thêm Mới
+                </button>
+  
+                <!--modal-->
+                <div bsModal #addAndEdit="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                  aria-labelledby="dialog-sizes-name1">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        
+                        <button type="button" class="close pull-right" (click)="addAndEdit.hide()" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal" #formStudent="ngForm" (ngSubmit)="save(formStudent.value)"
+                          *ngIf="entity">
+                          <div class="form-group">
+                            <label for="studentsId">Mã Sinh Viên:</label>
+                            <input type="hidden" class="form-control" name="hidenID" placeholder="Nhập mã học sinh"
+                              [(ngModel)]="hidenID">
+                            <input type="text" class="form-control" name="studentsId" placeholder="Nhập mã học sinh"
+                              [(ngModel)]="entity.studentsId">
+                          </div>
+                          <div class="form-group">
+                            <label for="studentsName">Tên Sinh Viên:</label>
+                            <input type="text" class="form-control" name="studentsName" placeholder="Nhập tên học sinh"
+                              [(ngModel)]="entity.studentsName">
+                          </div>
+                          <div class="form-group">
+                            <label for="facultyId">Mã Khoa:</label>
+                            <input type="text" class="form-control" name="facultyId" placeholder="Nhập mã khoa"
+                              [(ngModel)]="entity.facultyId">
+                          </div>
+                          <div class="form-group">
+                            <label for="classId">Mã Lớp:</label>
+                            <input type="text" class="form-control" name="classId" placeholder="Nhập mã lớp"
+                              [(ngModel)]="entity.classId">
+                          </div>
+                          <div class="form-group">
+                            <label for="className">Tên Lớp:</label>
+                            <input type="text" class="form-control" name="className" placeholder="Nhập tên lớp"
+                              [(ngModel)]="entity.className">
+                          </div>
+                          <div class="form-group">
+                            <label for="studentsAddress">Địa Chỉ:</label>
+                            <input type="text" class="form-control" name="studentsAddress" placeholder="Nhập địa chỉ"
+                              [(ngModel)]="entity.studentsAddress">
+                          </div>
+                          <div class="form-group">
+                            <label for="fristPoint">Điểm Lần 1:</label>
+                            <input type="number" class="form-control" name="fristPoint" placeholder="Nhập điểm lần 1"
+                              [(ngModel)]="entity.fristPoint">
+                          </div>
+                          <div class="form-group">
+                            <label for="statusPay">Trạng thái Thanh Toán:</label>
+                            <section class="form-control" name ="statusPay" [(ngModel)]="entity.statusPay"> 
+                                <select>
+                                <option value="True">Yes</option>
+                                <option value="False">False</option>
+                              </select>
+                            </section>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <!--end modal-->
               </div>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
-                <tr>
-                    <th>Mã SV</th>
-                    <th>Tên SV</th>
-                    <th>Mã Khoa</th>
-                    <th>Mã Lớp</th>
-                    <th>Tên Lớp</th>
-                    <th>Địa Chỉ</th>
-                    <th>Điểm Lần 1</th>
-                    <th>Trạng Thái Thanh Toán</th>
-                    <th>Chức Năng</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr *ngFor = "let dataIteam of stu">
-                    <td>{{dataIteam.studentsId}}</td>
-                    <td>{{dataIteam.studentsName}}</td>
-                    <td>{{dataIteam.facultyId}}</td>
-                    <td>{{dataIteam.classId}}</td>
-                    <td>{{dataIteam.className}}</td>
-                    <td>{{dataIteam.studentsAddress}}</td>
-                    <td>{{dataIteam.fristPoint}}</td>
-                    <td>{{dataIteam.statusPay}}</td>
-                   
+                  <tr>
+                      <th>Mã SV</th>
+                      <th>Tên SV</th>
+                      <th>Mã Khoa</th>
+                      <th>Mã Lớp</th>
+                      <th>Tên Lớp</th>
+                      <th>Địa Chỉ</th>
+                      <th>Điểm Lần 1</th>
+                      <th>Trạng Thái Thanh Toán</th>
+                      <th>Chức Năng</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor = "let dataIteam of stu">
+                      <td>{{dataIteam.studentsId}}</td>
+                      <td>{{dataIteam.studentsName}}</td>
+                      <td>{{dataIteam.facultyId}}</td>
+                      <td>{{dataIteam.classId}}</td>
+                      <td>{{dataIteam.className}}</td>
+                      <td>{{dataIteam.studentsAddress}}</td>
+                      <td>{{dataIteam.fristPoint}}</td>
+                      <td>{{dataIteam.statusPay}}</td>
+  
                     <td>
-                  
-                      <button style="margin-left: 10px;" class="fa fa-edit"  aria-hidden="true"></button>
-                      <button style="margin-left: 10px;" class="fa fa-trash" aria-hidden="true"></button>
+                      <button class="fa fa-check" aria-hidden="true"></button>
+                      <button style="margin-left: 10px;" class="fa fa-edit" aria-hidden="true"
+                        (click)="showEdit(dataIteam.studentsId)"></button>
+                      <button style="margin-left: 10px;" class="fa fa-trash" aria-hidden="true"
+                        (click)="deleteItem(dataIteam.studentsId)"></button>
                     </td>
                   </tr>
-                </table>
-              </div>
-              <!-- /.card-body -->
+              </table>
             </div>
-            <!-- /.card -->
+            <!-- /.card-body -->
           </div>
-          <!-- /.col -->
+          <!-- /.card -->
         </div>
-        <!-- /.row -->
+        <!-- /.col -->
       </div>
+      <!-- /.row -->
+  
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
+  
+  <!--model-->

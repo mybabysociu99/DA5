@@ -1,146 +1,165 @@
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>Danh Sách Điểm Học Lại</h1>
-
-        </div>
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
-            <li class="breadcrumb-item active">Điểm Học Lại</li>
-          </ol>
-        </div>
-      </div>
-    </div><!-- /.container-fluid -->
-  </section>
-
-  <!-- Main content -->
-  <section class="content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Danh Sách Điểm Học Lại</h3>
-              <input class="form-control form-control-navbar" type="search" placeholder="Tìm Điểm Học Lại" aria-label="Search">
-              <button style="margin-top: 10px;">Tìm Kiếm</button>
-            </div>
-            
-
-            <!-- /.card-header -->
-            <div class="card-body">
-                             <!-- Button trigger modal -->
-<button style="margin-left: 1430px; margin-bottom: 30px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Thêm Mới
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"  id="exampleModalLabel">Thêm Điểm</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-row">
-            <div class="col-md-6 mb-6">
-              <label for="validationServer01">Mã Điểm</label>
-              <input type="text" class="form-control" id="1" placeholder="ScoresId" value="Nhập Tên" required>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationServer02">Mã SV</label>
-              <input type="text" class="form-control" id="2" placeholder="StudentsId" value="Nhập Điểm" required>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationServer01">Tên SV</label>
-              <input type="text" class="form-control" id="3" placeholder="StudentsName" value="Nhập Tên" required>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationServer02">Mã Lớp</label>
-              <input type="text" class="form-control" id="4" placeholder="ClassId" value="Nhập Điểm" required>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationServer01">Tên Lớp</label>
-              <input type="text" class="form-control" id="5" placeholder="ClassName" value="Nhập Tên" required>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationServer02">Mã Khoa</label>
-              <input type="text" class="form-control" id="6" placeholder="FacultyId" value="Nhập Điểm" required>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationServer01">Mã Giảng Viên</label>
-              <input type="text" class="form-control" id="7" placeholder="LeturersId" value="Nhập Tên" required>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationServer02">Điểm Lần 1</label>
-              <input type="text" class="form-control" id="8" placeholder="FristPoint" value="Nhập Điểm" required>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationServer01">Điểm Lần 2</label>
-              <input type="text" class="form-control" id="9" placeholder="SecondPoint" value="Nhập Tên" required>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationServer01">Trạng Thái</label>
-              <input type="text" class="form-control" id="10" placeholder="Status" value="Nhập Tên" required>
-            </div>
-            <div class="col-md-6 mb-6">
-              <label for="validationServer01">Ghi Chú</label>
-              <input type="text" class="form-control" id="11" placeholder="Note" value="Nhập Tên" required>
-            </div>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Danh Sách Điểm Học Lại</h1>
+  
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-        <button type="button" class="btn btn-primary">Lưu</button>
-      </div>
-    </div>
-  </div>
-</div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+              <li class="breadcrumb-item active">Điểm Học Lại</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+  
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Danh Sách Điểm Học Lại</h3>
+                <input class="form-control form-control-navbar" type="search" placeholder="Tìm Điểm Học Lại"
+                  aria-label="Search">
+                <button style="margin-top: 10px;">Tìm Kiếm</button>
+              </div>
+  
+  
+              <!-- /.card-header -->
+              <div class="card-body">
+                <button style="margin-left: 1430px; margin-bottom: 30px;" type="button" class="btn btn-primary"
+                  (click)="showAdd()">
+                  Thêm Mới
+                </button>
+  
+                <!--modal-->
+                <div bsModal #addAndEdit="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+                  aria-labelledby="dialog-sizes-name1">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                      
+                        <button type="button" class="close pull-right" (click)="addAndEdit.hide()" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal" #formPoi="ngForm" (ngSubmit)="save(formPoi.value)"
+                        *ngIf="entity">
+                        <div class="form-group">
+                          <label for="scoresId">Mã điểm:</label>
+                          <input type="hidden" class="form-control" name="hidenID" placeholder="Nhập mã điểm"
+                            [(ngModel)]="hidenID">
+                          <input type="text" class="form-control" name="scoresId" placeholder="Nhập mã điểm"
+                            [(ngModel)]="entity.scoresId">
+                        </div>
+                        <div class="form-group">
+                          <label for="studentsId">Mã sinh viên:</label>
+                          <input type="text" class="form-control" name="studentsId" placeholder="Nhập mã sinh viên"
+                            [(ngModel)]="entity.studentsId">
+                        </div>
+                        <div class="form-group">
+                          <label for="studentsName">Tên sinh viên:</label>
+                          <input type="text" class="form-control" name="studentsName" placeholder="Nhập tên sinh viên"
+                            [(ngModel)]="entity.studentsName">
+                        </div>
+                        <div class="form-group">
+                          <label for="classId">Mã lớp:</label>
+                          <input type="text" class="form-control" name="classId" placeholder="Nhập mã lớp"
+                            [(ngModel)]="entity.classId">
+                        </div>
+                        <div class="form-group">
+                          <label for="className">Tên lớp:</label>
+                          <input type="text" class="form-control" name="className" placeholder="Nhập tên lớp"
+                            [(ngModel)]="entity.className">
+                        </div>
+                        <div class="form-group">
+                          <label for="facultyId">Mã Khoa:</label>
+                          <input type="text" class="form-control" name="facultyId" placeholder="Nhập mã khoa"
+                            [(ngModel)]="entity.facultyId">
+                        </div>
+                        <div class="form-group">
+                          <label for="leturersId">Mã giảng viên:</label>
+                          <input type="text" class="form-control" name="leturersId" placeholder="Nhập mã giảng viên"
+                            [(ngModel)]="entity.leturersId">
+                        </div>
+                        <div class="form-group">
+                          <label for="fristPoint">Điểm lần 1:</label>
+                          <input type="number" class="form-control" name="fristPoint" placeholder="Nhập điểm lần 1"
+                            [(ngModel)]="entity.fristPoint">
+                        </div>
+                        <div class="form-group">
+                          <label for="secondPoint">Điểm lần 2:</label>
+                          <input type="number" class="form-control" name="secondPoint" placeholder="Nhập điểm lần 2"
+                            [(ngModel)]="entity.secondPoint">
+                        </div>
+                         <div class="form-group">
+                          <label for="status">Trạng thái:</label>
+                          <section class="form-control" name ="status" [(ngModel)]="entity.status"> 
+                              <select>
+                              <option value="True">Yes</option>
+                              <option value="False">False</option>
+                            </select>
+                          </section>
+                        </div>
+                        <div class="form-group">
+                          <label for="note">Ghi chú:</label>
+                          <input type="text" class="form-control" name="note" placeholder="Nhập ghi chú"
+                            [(ngModel)]="entity.note">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--end modal-->
+              </div>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
-                <tr>
-                  <th>Mã Điểm</th>
-                  <th>Mã SV</th>
-                  <th>Tên SV</th>
-                  <th>Mã Lớp</th>
-                  <th>Tên Lớp</th>
-                  <th>Mã Khoa</th>
-                  <th>Mã Giảng Viên</th>
-                  <th>Điểm Lần 1</th>
-                  <th>Điểm Lần 2</th>
-                  <th>Trạng Thái</th>
-                  <th>Ghi Chú</th>
-                  <th>Chức Năng</th>
-                </tr>
+                  <tr>
+                    <th>Mã Điểm</th>
+                    <th>Mã SV</th>
+                    <th>Tên SV</th>
+                    <th>Mã Lớp</th>
+                    <th>Tên Lớp</th>
+                    <th>Mã Khoa</th>
+                    <th>Mã Giảng Viên</th>
+                    <th>Điểm Lần 1</th>
+                    <th>Điểm Lần 2</th>
+                    <th>Trạng Thái</th>
+                    <th>Ghi Chú</th>
+                    <th>Chức Năng</th>
+                  </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor = "let ryn of diem">
-                  <td>{{ryn.scoresId}}</td>
-                  <td>{{ryn.studentsId}}</td>
-                  <td>{{ryn.studentsName}}</td>
-                  <td>{{ryn.classId}}</td>
-                  <td>{{ryn.className}}</td>
-                  <td>{{ryn.facultyId}}</td>
-                  <td>{{ryn.leturersId}}</td>
-                  <td>{{ryn.fristPoint}}</td>
-                  <td>{{ryn.secondPoint}}</td>
-                  <td>{{ryn.status}}</td>
-                  <td>{{ryn.note}}</td>
-                 
-                  <td>
-                    
-                    <button style="margin-left: 10px;" class="fa fa-edit"  aria-hidden="true"></button>
-                    <button style="margin-left: 10px;" class="fa fa-trash" aria-hidden="true"></button>
-                  </td>
-                </tr>
+                  <tr *ngFor="let ryn of diem">
+                    <td>{{ryn.scoresId}}</td>
+                    <td>{{ryn.studentsId}}</td>
+                    <td>{{ryn.studentsName}}</td>
+                    <td>{{ryn.classId}}</td>
+                    <td>{{ryn.className}}</td>
+                    <td>{{ryn.facultyId}}</td>
+                    <td>{{ryn.leturersId}}</td>
+                    <td>{{ryn.fristPoint}}</td>
+                    <td>{{ryn.secondPoint}}</td>
+                    <td>{{ryn.status}}</td>
+                    <td>{{ryn.note}}</td>
+  
+                    <td>
+                      <button class="fa fa-check" aria-hidden="true"></button>
+                      <button style="margin-left: 10px;" class="fa fa-edit" aria-hidden="true"
+                        (click)="showEdit(ryn.scoresId)"></button>
+                      <button style="margin-left: 10px;" class="fa fa-trash" aria-hidden="true"
+                        (click)="deleteItem(ryn.scoresId)"></button>
+                    </td>
+                  </tr>
               </table>
             </div>
             <!-- /.card-body -->
@@ -150,8 +169,10 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-  </section>
-  <!-- /.content -->
-</div>
+  
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  
+  <!--model-->
